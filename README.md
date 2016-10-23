@@ -1,4 +1,6 @@
 # jasmine-supertest
+[![Build Status](https://travis-ci.org/djungowski/jasmine-supertest.svg?branch=master)](https://travis-ci.org/djungowski/jasmine-supertest)
+
 Small library to ease the pain of using SuperTest in combination with Jasmine
 
 If you use [Supertest](https://github.com/visionmedia/supertest) in combination with Jasmine, you cannot use the done callback out-of-the-box (see https://github.com/jasmine/jasmine-npm/issues/31). This library eases this pain.
