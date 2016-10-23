@@ -1,7 +1,7 @@
 module.exports = function(done) {
 	return function(error) {
 		if (error) {
-			done(error);
+			done.fail(error);
 		} else {
 			done();
 		}
