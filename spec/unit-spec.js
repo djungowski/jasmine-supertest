@@ -20,15 +20,17 @@ describe('jasmine-supertest unit tests', function() {
 	});
 
 	describe('test failure', function() {
-		it('calls the done function exactly once with error message', function() {
+		it('calls the done.fail function exactly once with error message', function() {
 			var done = jasmine.createSpy('done callback');
+			done.fail = jasmine.createSpy('done fail callback');
 			var actual = finishTestcase(done);
-			var errorMessage = 'Chicken fingers… with spicy club sauce.';
+			var errorMessage = 'Chicken fingers... with spicy club sauce.';
 
 			actual(errorMessage);
 
-			expect(done).toHaveBeenCalledTimes(1);
-			expect(done).toHaveBeenCalledWith(errorMessage);
+			expect(done).not.toHaveBeenCalled();
+			expect(done.fail).toHaveBeenCalledTimes(1);
+			expect(done.fail).toHaveBeenCalledWith(errorMessage);
 		});
 	});
 });
